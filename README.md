@@ -3,6 +3,10 @@
 # 1.安装
 - 通过 git clone 命令进行安装，好处是无需生成APP_KEY
 - 直接下载zip包解压缩配置使用，需要在命令行执行```php artisan key:generate```生成APP_KEY，将会自动配置在.env文件中
+- 安装后请执行```composer install```命令安装扩展包。在这之前，如果你没有修改过镜像源，建议修改为国内阿里镜源地址保证 composer 安装加速。
+```php
+composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
+```
 # 2.配置
 - 克隆项目后复制```.env.example```文件，命名为```.env```文件
 - 在你本地创建好数据库以后，配置好数据库连接，执行```php artisan migrate```命令执行数据迁移，详细内容请查阅文档。并且在以后的开发过程中强烈建议使用数据库迁移和填充对数据库进行版本控制。
