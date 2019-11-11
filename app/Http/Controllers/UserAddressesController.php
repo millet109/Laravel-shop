@@ -76,6 +76,6 @@ class UserAddressesController extends Controller
     public function destroy(UserAddress $user_address)
     {
         $user_address->delete();
-        return redirect()->route('user_addresses.index');
+        return [];
     }
 }
