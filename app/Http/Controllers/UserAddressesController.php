@@ -53,6 +53,10 @@ class UserAddressesController extends Controller
 
     public function edit(UserAddress $user_address)
     {
+        /**
+         authorize('own', $user_address) 方法会获取第二个参数 $user_address 的类名，App\Models\UserAddress，然后执行我们之前在 AuthServiceProvider 类中定义的自动寻找逻辑，在这里找到的类就是 App\Policies\UserAddressPolicy，之后会实例化这个策略类，再调用名为 own() 方法，如果 own() 方法返回 false 则会抛出一个未授权的异常。
+         */
+        $this->authorize('own', $user_address);
         return view('user_addresses.create_and_edit',[
             'address' => $user_address
         ]);
@@ -60,6 +64,7 @@ class UserAddressesController extends Controller
 
     public function update(UserAddress $user_address,UserAddressRequest $request)
     {
+        $this->authorize('own', $user_address);
         $user_address->update($request->only([
             'province',
             'city',
@@ -75,6 +80,7 @@ class UserAddressesController extends Controller
 
     public function destroy(UserAddress $user_address)
     {
+        $this->authorize('own', $user_address);
         $user_address->delete();
         return [];
     }

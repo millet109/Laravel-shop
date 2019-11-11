@@ -89,6 +89,7 @@
                             </div>
                             <div class="form-group row text-center">
                                 <div class="col-12">
+                                    <button type="button" onClick="javascript :history.back(-1);" class="btn btn-primary">返回</button>
                                     <button type="submit" class="btn btn-primary">提交</button>
                                 </div>
                             </div>
