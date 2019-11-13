@@ -16,7 +16,7 @@ Auth::routes(['verify' => true]);
 
 Route::get('products', 'ProductsController@index')->name('products.index');
 
-Route::get('products/{product}', 'ProductsController@show')->name('products.show');
+//Route::get('products/{product}', 'ProductsController@show')->name('products.show');
 
 Route::group(['middleware' => ['auth','verified']],function (){
 
@@ -35,4 +35,13 @@ Route::group(['middleware' => ['auth','verified']],function (){
     Route::post('products/{product}/favorite', 'ProductsController@favor')->name('products.favor');
 
     Route::delete('products/{product}/favorite', 'ProductsController@disfavor')->name('products.disfavor');
+
+    Route::get('products/favorites', 'ProductsController@favorites')->name('products.favorites');
 });
+/**
+ * 初次添加好路由：Route::get('products/favorites', 'ProductsController@favorites')->name('products.favorites');
+ * 提示页面不存在，原因是：和之前的 products/{product} 这个路由冲突了
+ * Laravel 在匹配路由的时候会按定义的顺序依次查找，找到第一个匹配的路由就返回。所以当我们访问这个 URL 的时候会先匹配到商品详情页这个路由，然后把 favorites 当成商品 ID 去数据库查找，查不到对应的商品就抛出了不存在的异常
+ * 所以将上面的 products/{product} 路由删除（目前是注释，为了区分），移动到下面
+ */
+Route::get('products/{product}', 'ProductsController@show')->name('products.show');
