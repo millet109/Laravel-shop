@@ -35,4 +35,4 @@ composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
 - 订单退款流程
 - 优惠券模块
 
-技术知识点包括 Laravel 中事务操作（Transaction）、支付接口调试、订单流水号生成、预加载与延迟预加载、事件和监听器、MailHog 调试邮件发送、Service 模式、自定义验证器等。
+技术知识点包括 Laravel 中事务操作（Transaction）、支付接口调试、订单流水号生成、预加载与延迟预加载、事件和监听器、邮件发送、Service 模式、自定义验证器等。
