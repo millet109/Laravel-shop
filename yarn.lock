@@ -667,6 +667,11 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@fortawesome/fontawesome-free@^5.11.2":
+  version "5.11.2"
+  resolved "https://registry.npm.taobao.org/@fortawesome/fontawesome-free/download/@fortawesome/fontawesome-free-5.11.2.tgz?cache=0&sync_timestamp=1573083927223&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40fortawesome%2Ffontawesome-free%2Fdownload%2F%40fortawesome%2Ffontawesome-free-5.11.2.tgz#8644bc25b19475779a7b7c1fc104bc0a794f4465"
+  integrity sha1-hkS8JbGUdXeae3wfwQS8CnlPRGU=
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.npm.taobao.org/@mrmlnc/readdir-enhanced/download/@mrmlnc/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -1880,7 +1885,7 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-cross-env@^5.1:
+cross-env@^5.2.1:
   version "5.2.1"
   resolved "https://registry.npm.taobao.org/cross-env/download/cross-env-5.2.1.tgz#b2c76c1ca7add66dc874d11798466094f551b34d"
   integrity sha1-ssdsHKet1m3IdNEXmEZglPVRs00=
