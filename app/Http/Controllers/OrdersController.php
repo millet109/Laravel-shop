@@ -13,6 +13,18 @@ use App\Exceptions\InvalidRequestException;
 
 class OrdersController extends Controller
 {
+    public function index(Request $request)
+    {
+        $orders = Order::query()
+            //使用with方法实现预加载
+            ->with(['items.product', 'items.productSku'])
+            ->where('user_id',$request->user()->id)
+            ->orderBy('created_at','desc')
+            ->paginate();
+
+        return view('orders.index',['orders' => $orders]);
+    }
+
     public function store(OrderRequest $request)
     {
         $user = $request->user();
