@@ -43,6 +43,8 @@ Route::group(['middleware' => ['auth','verified']],function (){
     Route::get('cart', 'CartController@index')->name('cart.index');
 
     Route::delete('cart/{sku}','CartController@remove')->name('cart.remove');
+
+    Route::post('orders', 'OrdersController@store')->name('orders.store');
 });
 /**
  * 初次添加好路由：Route::get('products/favorites', 'ProductsController@favorites')->name('products.favorites');
