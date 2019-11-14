@@ -16,7 +16,10 @@ class CartController extends Controller
          */
         $cartItems = $request->user()->cartItems()->with(['productSku.product'])->get();
 
-        return view('cart.index',['cartItems' => $cartItems]);
+        //通常来说用户重复使用最近用过的地址概率比较大，在取地址的时候根据 last_used_at 最后一次使用时间倒序排序，这样用户体验会好一些
+        $addresses = $request->user()->addresses()->orderBy('last_used_at','desc')->get();
+
+        return view('cart.index',['cartItems' => $cartItems, 'addresses' => $addresses]);
     }
 
     public function add(AddCartRequest $request)
