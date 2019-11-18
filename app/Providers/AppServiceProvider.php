@@ -24,6 +24,17 @@ class AppServiceProvider extends ServiceProvider
         //往服务容器中注入一个alipay的单例对象
         $this->app->singleton('alipay',function (){
             $config = config('pay.alipay');
+            /**
+             * notify_url 代表服务器端回调地址，return_url 代表前端回调地址
+             * 回调地址必须是完整的带有域名的 URL，不可以是相对路径
+             * 使用 route() 函数生成的 URL 默认就是带有域名的完整地址
+             *
+             * 如果是本地域名，支付宝服务器无法请求到我们的服务器端回调地址，
+             * 使用http://requestbin.net/
+             */
+            $config['notify_url'] = 'http://requestbin.net/r/1p0laah1';
+            //$config['notify_url'] = route('payment.alipay.notify');
+            $config['return_url'] = route('payment.alipay.return');
             // 判断当前项目运行环境是否为线上环境
             if (app()->environment() !== 'production') {
                 $config['mode']         = 'dev';

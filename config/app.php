@@ -228,7 +228,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
-    //设置未支付订单自动关闭时间，为了方便测试，设置为30秒，生产环境自行定义
-    'order_ttl' => 30,
+    //设置未支付订单自动关闭时间，为了方便测试，设置为1800秒，生产环境自行定义
+    'order_ttl' => 1800,
 
 ];
