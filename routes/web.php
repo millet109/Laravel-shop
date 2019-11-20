@@ -55,6 +55,10 @@ Route::group(['middleware' => ['auth','verified']],function (){
     Route::get('payment/alipay/return', 'PaymentController@alipayReturn')->name('payment.alipay.return');
 
     Route::post('orders/{order}/received','OrdersController@received')->name('orders.received');
+
+    Route::get('orders/{order}/review', 'OrdersController@review')->name('orders.review.show');
+
+    Route::post('orders/{order}/review', 'OrdersController@sendReview')->name('orders.review.store');
 });
 /**
  * 初次添加好路由：Route::get('products/favorites', 'ProductsController@favorites')->name('products.favorites');

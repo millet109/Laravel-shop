@@ -32,7 +32,7 @@ class AppServiceProvider extends ServiceProvider
              * 如果是本地域名，支付宝服务器无法请求到我们的服务器端回调地址，
              * 使用http://requestbin.net/
              */
-            $config['notify_url'] = 'http://requestbin.net/r/1jdd9t61';
+            $config['notify_url'] = 'http://requestbin.net/r/1al98lr1';
             //$config['notify_url'] = route('payment.alipay.notify');
             $config['return_url'] = route('payment.alipay.return');
             // 判断当前项目运行环境是否为线上环境
