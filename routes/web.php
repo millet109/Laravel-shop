@@ -59,6 +59,10 @@ Route::group(['middleware' => ['auth','verified']],function (){
     Route::get('orders/{order}/review', 'OrdersController@review')->name('orders.review.show');
 
     Route::post('orders/{order}/review', 'OrdersController@sendReview')->name('orders.review.store');
+
+    Route::post('orders/{order}/apply_refund', 'OrdersController@applyRefund')->name('orders.apply_refund');
+
+
 });
 /**
  * 初次添加好路由：Route::get('products/favorites', 'ProductsController@favorites')->name('products.favorites');
