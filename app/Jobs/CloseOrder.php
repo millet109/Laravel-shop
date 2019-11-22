@@ -28,7 +28,7 @@ class CloseOrder implements ShouldQueue
     }
 
     /**
-     *定义这个任务类具体的执行逻辑
+     * 定义这个任务类具体的执行逻辑
      * 当队列处理器从队列中取出任务时，会调用 handle() 方法
      * Execute the job.
      *
